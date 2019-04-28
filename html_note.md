@@ -181,3 +181,67 @@ HTML 的标准属性和事件属性指的分别是什么？
 [link属性](https://www.runoob.com/tags/tag-link.html)
 
 ---
+#### `style`标签
+
+`<style>` 标签定义了HTML文档的样式文件引用地址.
+在`<style>` 元素中你也可以**直接添加**样式来渲染 HTML 文档
+```HTML
+<head>
+<style type="text/css">
+body {background-color:yellow} #直接添加样式，定义了body
+h1 {color: pink;}
+p {color:blue;}  #直接添加样式，定义了段落 p
+</style>
+</head>
+```
+
+`style`和`link`跟样式表都有关系，但是:
+> 如需链接外部样式表，请使用 **link** 标签。
+
+##### `style`标签的`scoped`属性
+
+`scoped` 属性是 `HTML 5 `中的新属性，它允许我们为文档的指定**部分**定义样式，而不是整个文档。
+
+如果使用 `scoped` 属性，那么所规定的样式只能应用到 `style` 元素的父元素及其子元素。
+***目前只有 Firefox属性支持 scoped 属性***  ┑(￣Д ￣)┍
+
+#### `meta` 标签
+
+`meta`标签描述了一些基本的元数据。这些元数据也不显示在页面上，但会被浏览器解析。
+
+`meta`元素通常用于指定网页的描述，关键词，文件的最后修改时间，作者，和其他元数据。可以使用于**浏览器**（如何显示内容或重新加载页面），**搜索引擎**（关键词），或其他Web服务。
+
+`<meta>`一般放置于 `<head>` 区域
+常用属性有：`name` ,`http-equiv` ,`charset`三种。
+
+
+一般的定义格式：
+```html
+<meta name="元数据名称" content="元数据的值/内容">
+```
+eg.1 为搜索引擎定义**关键词**：
+```html
+<meta name="keywords" content="HTML,CSS,XML,XHTML,JAVASCRIPT">
+```
+eg.2 为网页定义描述内容（读者看不见但浏览器会解析）：
+```html
+<meta name="description" content="code, web, website">
+```
+eg.3 定义网页作者（读者也是看不见的）：
+```html
+<meta name="author" content="runoob">
+```
+eg.4 还可以定义网页的**显示方式**，比如说每隔30s，刷新页面：
+```html
+<meta http-equiv="refresh" content="30">
+```
+##### 另外
+在`HTML5` 中，有一个新的 `charset` 属性，它使字符集的定义更加容易：
+```html
+ <meta charset="UTF-8">
+ <!--定义文档的字符编码-->
+ ```
+
+
+### `<script>`标签
+用于加载脚本文件，比如： `JAVASCRIPT`（在html中，基本都只有js的脚本了。）

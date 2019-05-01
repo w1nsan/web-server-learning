@@ -16,8 +16,7 @@
 
 ### 元素实例
 
-##### `<div></div>`
- 一个盒子，用于容纳其他的元素,用来分类和嵌套样式
+
 
 ##### `<a></a>`
 添加链接 （锚链接）
@@ -353,3 +352,81 @@ eg.4 还可以定义网页的**显示方式**，比如说每隔30s，刷新页�
 <li>milk</li>
 <li>tea</li>
 </ol>
+---
+
+### HTML区块
+HTML 可以通过 `<div>` 和 `<span>` 将元素组合起来。
+
+HTML的元素可以分为： **块级元素**和**内联元素
+
+块级元素一般是新起一行；`<h1>, <p>, <ul>, <table>`
+
+内联元素则在行内：比如`<span>`,`<a>`
+
+##### 关于`<div></div>`元素
+ ***一个盒子，用于容纳其他的元素,用来分类和嵌套样式。***
+
+ `<div>` 标签可以把文档分割为独立的、不同的部分。它是可用于组合其他 HTML 元素的容器。
+`<div>`元素没有特定的含义,，浏览器会在其前后显示折行。
+如果与 `CSS` 一同使用， `<div>`元素可用于对**大的内容块**设置样式属性。
+
+##### 关于`<span>`元素
+HTML `<span>` 元素是内联元素，可用作文本的容器
+
+`<span>` 元素也没有特定的含义。
+
+当与 `CSS` 一同使用时，`<span>` 元素可用于为**部分文本**设置样式属性。
+
+#### html 使用`<div>`进行页面布局
+如何用`<div>`来布局 html 的行和列。
+ - 没使用浮动（float）效果时，div之间是**上下布局** (生成行)
+ - 使用浮动（float）进行布局时就是左右之分（生成列）
+
+##### 示例
+```HTML
+<!DOCTYPE>
+<html>
+<head>
+<meta charset="utf-8">
+<title>页面布局</title>
+</head>
+<body>
+  <div id="container" style="width:800px">
+  <!--在这个div盒子里的所有内容都是800px的宽度-->
+  <div id="header" style="background-color:#FFA500;">
+  # 这个盒子里的背景颜色设定
+  <h1 style="margin-bottom:0;">主要标题</h1></div>
+  # h1的样式设定是 下边缘为0
+  # div没有设置浮动属性，因此是分“行”排列的。
+
+  <div id="menu" style="background-color:#FFD700;
+                        height:200px;
+                        width:100px;
+                        float:left">  # 设置了float 这个div就是按"列"来放置，它被放在左列
+  <b>菜单</b><br/>
+  html<br/>
+  css<br/>
+  javascript
+ #菜单的显示都在这个“放置左列”的盒子里按行排列
+  </div>
+
+  <div id="content" style="background-color:#EEEEEE;
+                           height:200px;
+                           width:700px; #这个div跟上一个盒子在同一“行”上，占据了不同列
+                           float:left">
+  #因为在最开始设置了整个大盒子的最大宽度是 800px，前一个盒子占了 100px，这个盒子占了700px
+  #所以这一行上已经不能再容纳第3列了。
+  这里输入内容
+  </div>
+
+  <div id="footer" style="background-color:#FFA500;
+                          clear:both;
+                          text-align:center;">
+  版权归W3C所有
+  </div>
+  #这个盒子没有设 `float`，因此是在新的一行里。
+
+</div>
+</body>
+</html>
+  ```

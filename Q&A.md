@@ -130,7 +130,7 @@ function Fibonacci(n) {
     return Fibonacci(n-1)+Fibonacci(n-2) }
 }
 ```
-
+参考：[什么是斐波那契数列](https://baijiahao.baidu.com/s?id=1606651492697783298&wfr=spider&for=pc)
 
 #### 比较相同功能的函数在JavaScript，R，和 Python 之间的差别（语法+速度）
 #### 尝试本地部署 Gitlab 服务

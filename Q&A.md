@@ -140,3 +140,42 @@ function Fibonacci(n) {
 
     Gitlab 相当于一个小型的 Github : GitLab可以实现一个**自托管**的Git项目仓库，可通过 Web 界面进行访问公开的或者私人项目。
     它拥有与Github类似的功能可以管理团队对仓库的访问，它非常易于浏览提交过的版本并提供一个文件历史库。
+
+在CentOS7服务器中搭建 GitLab
+
+```bash
+yum install curl openssh-server openssh-clients postfix cronie policycoreutils-python –y    #安装 gitlab 依赖的包
+```
+
+postfix的启动
+获取 gitlab 安装包
+修改 ip 地址
+```bash
+[root@openbiox01]# gitlab-ctl reconfigured
+Running handlers:
+Running handlers complete
+Chef Client finished, 220/307 resources updated in 01 minutes 26 seconds
+gitlab Reconfigured!
+```
+```bash
+[root@openbiox01]# gitlab-ctl restart
+ok: run: gitlab-workhorse: (pid 13653) 1s
+ok: run: logrotate: (pid 13661) 0s
+ok: run: nginx: (pid 13667) 1s
+ok: run: postgresql: (pid 13675) 0s
+ok: run: redis: (pid 13683) 1s
+ok: run: sidekiq: (pid 13688) 0s
+ok: run: unicorn: (pid 13695) 0s
+
+```
+
+
+添加公钥之后克隆仓库
+```bash
+[root@openbiox01]# git clone git@101.132.168.150:root/project102.git
+Cloning into 'project102'...
+remote: Counting objects: 6, done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 6 (delta 0), reused 0 (delta 0)
+Receiving objects: 100% (6/6), done.
+```

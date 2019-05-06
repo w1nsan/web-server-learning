@@ -25,9 +25,11 @@ DOM是文档对象模型(Document Object Model)的缩写，它是 HTML 文档的
 
 DOM定义了HTML文档的**逻辑结构**，给出了一种访问和处理这两种文档的方法。
 当服务器把html文件发送给浏览器的时候，浏览器会先读取出这个html文件的DOM树:
+
+
 ![dom tree](https://pic4.zhimg.com/80/a92533fd47b29c816efd3b4cf6cd614e_hd.jpg)
 
-在[知乎](https://www.zhihu.com/question/34219998/answer/133487045)上看到一个比较贴切的比喻：
+在[知乎](https://www.zhihu.com/question/34219998/answer/133487045)上看到一个比较有趣的比喻：
 ```
 @破壁人王涛
     如果将文档的内容视为一栋办公楼，那DOM就是一种对办公楼内空间分配的标准，它规定了，这个办公楼的空间，应该是先分楼层，再分房间的方式，方便访客找到这个房间。有什么用？
@@ -40,13 +42,31 @@ DOM定义了HTML文档的**逻辑结构**，给出了一种访问和处理这两
 
 ```
 #### 现在的网页 HTML 文件一般会包含哪些 HTML 标签？
+`<html></html>`
+`<head></head>`
+`<meta></meta>`
+
+`<body></body>`
+`<table></table>`
+`<tr></tr>`
+`<td></td>`
+`<li></li>`
+`<a></a>`
+`<link>`(开放标签)
+`<script></script>`
+`<style></style>`
+
+...
+
+[参考手册](https://www.runoob.com/tags/html-reference.html)
+
 #### CSS 选择器有哪些？
 CSS选择器用于选择你想要的元素的样式的模式。HTML页面中的元素就是通过CSS选择器进行控制的。
 
 每一条css样式定义由两部分组成，`选择器{样式}`。 “选择器”指明了`{}`中的“样式”的作用对象，也就是“样式”作用于网页中的哪些元素。CSS选择器大致分为：
 
- - 类选择器
- - id选择器
+ - 类选择器: `.class`
+ - id选择器: `#id`
  - 标签选择器
  - 元素选择器
  - 后代选择器
@@ -65,12 +85,30 @@ CSS选择器用于选择你想要的元素的样式的模式。HTML页面中的�
 语法种类很少，只对应 HTML 标记的一小部分
 块级HTML元素内是不能使用Markdown语法
 #### document.getElementById 是用来做什么的？
-HTML DOM 定义了多种查找元素的方法,当你需要查找文档中的一个特定的元素，`getElementById()` 可返回对拥有指定 ID 的第一个对象的引用。所以在操作文档的一个特定的元素时，最好给该元素一个 id 属性，为它指定一个（在文档中）唯一的名称，然后就可以用该 ID 查找想要的元素。
+HTML DOM 定义了多种查找元素的方法,当你需要查找文档中的一个特定的元素，`getElementById()` 可返回对拥有指定 ID 的第一个对象的引用。所以在操作文档的一个特定的元素时，最好给该元素一个 id 属性，为它指定一个（在文档中）**唯一**的名称，然后就可以用该 ID 查找想要的元素。
 
 参考：[HTML DOM getElementById() 方法](http://www.w3school.com.cn/jsref/met_doc_getelementbyid.asp)
 #### JavaScript 的运行速度和 Python/R 相比是快还是慢？
+javacript > pyhon > R
+
+（可以用斐波那契数列验证）
 #### Cookie 和 Session 存在的目的是什么？
+
+一般而言是为了让用户保持登录状态。
+ 客户端（用户）第一次访问一个服务器时，服务器会生成一个**Cookie**和**Session**。前者保存在客户端浏览器中，后者保存在服务器中，session比cookie更安全。下一次这个客户端再访问这个服务器时，服务端通过携带的Cookie找出该用户信息。服务端就能够知道是谁访问了。(p.s. `Session` 是对服务端来说的, 客户端没有 Session 这一说)。
+ ![](https://ask.qcloudimg.com/http-save/developer-news/146u28ouxj.jpeg?imageView2/2/w/1620)
+
+ 另外，对于 API 还有一个token的概念，详细可见：
+
+ [Cookie，Session和Token概念的正确理解](https://cloud.tencent.com/developer/news/247610)
+
 #### JavaScript 数据有哪些类型？它和 R/Python 的数据类型是否有什么对应关系？
+
+    JavaScript的数据类型分为两大类，基本数据类型和复杂数据类型。
+
+ - 基本数据类型：Null、Undefined、Number，String，Boolean。
+ - 复杂数据类型：Object。
+
 #### 如何设置多个 git 远程仓库，并分别推送和拉取？
 #### GitHub 克隆仓库时选择 git:// 和 https://的差异
 #### 什么是持续集成？
@@ -134,3 +172,10 @@ function Fibonacci(n) {
 
 #### 比较相同功能的函数在JavaScript，R，和 Python 之间的差别（语法+速度）
 #### 尝试本地部署 Gitlab 服务
+Gitlab 是一个代码仓库管理系统，可以很方便的管理权限、代码review，创建、管理project。你可以用gitlab自己搭建一个类似于Github一样的系统，一般用于在企业、学校等内部网络搭建git私服。
+
+参考资料：
+
+[在本地服务器搭建gitlab仓库管理](https://www.cnblogs.com/nulige/p/6825625.html)
+
+[手把手教你 GitLab 的安装及使用](https://www.jianshu.com/p/b04356e014fa)

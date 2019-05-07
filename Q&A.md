@@ -113,6 +113,15 @@ JavaScript的数据类型分为两大类，基本数据类型和复杂数据类�
 #### MySQL 和 SQLite 分别适用于哪些网页应用程序？
 #### SQLite 数据库能否设置用户名和密码？
 #### 在 R/Python 中提供SQLite 和 MySQL 接口的包/模块分别是？
+#### HTML与HTML5的区别是？目前常用哪个？
+#### 什么是前端开发？什么是后端开发？两者有什么区别？
+#### Rstudio Server算云服务器吗？是不是可以看作为一台只能可视化使用Rstudio的服务器？
+#### 类似于MySQL 关系型数据库管理系统有哪些？相比而言，MySQL 最主要的优点在哪？
+#### 浏览器，服务器和数据库之间的关系是什么，用户在浏览器中输入一个网址后这三者是怎样工作的?
+#### 云计算中的 laas,Paas,Saas 分别指的是什么，是通过什么来划分的。
+#### 列举几个 HTML 中常见的开放式标签
+#### 什么是 token 验证？
+
 ---
 ##编程题
 #### 使用最基础的 HTML/CSS/JavaScript 语法，设计一个简单的单页网页界面（至少应该包含一二三级标题和正文、表格、内容分栏、超链接、图片、视频、点击动画等）
@@ -218,3 +227,4 @@ remote: Compressing objects: 100% (3/3), done.
 remote: Total 6 (delta 0), reused 0 (delta 0)
 Receiving objects: 100% (6/6), done.
 ```
+#### 使用 MySQL 数据库创建一个用于存储用户信息的数据表：包含 username, email, password 三个字段，并分别使用 SQL 和 Python/R 客户端插入、删除和更新一行数据，密码使用 SHA256 进行加密

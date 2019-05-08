@@ -204,23 +204,51 @@ Gitlab 是一个代码仓库管理系统，可以很方便的管理权限、代�
     它拥有与Github类似的功能可以管理团队对仓库的访问，它非常易于浏览提交过的版本并提供一个文件历史库。
 
 ##### 在CentOS7服务器中搭建 GitLab
-
+###### 下载相关的包
 ```bash
 yum install curl openssh-server openssh-clients postfix cronie policycoreutils-python –y    #安装 gitlab 依赖的包
 ```
-
-postfix的启动
-获取 gitlab 安装包
-修改 ip 地址
+###### 设置开机postfix的启动
 ```bash
-[root@openbiox01]# gitlab-ctl reconfigured
+systemctl start postfix
+
+systemctl enable postfix
+```
+###### 获取 gitlab 安装包
+###### 防火墙设置
+```bash
+yum install firewalld systemd -y
+service firewalld  start    #打开防火墙
+sudo firewall-cmd --permanent --add-service=http
+sudo systemctl reload firewalld   #设置并重启
+```
+###### 下载 GitLab
+```bash
+wget https://mirrors.tuna.tsinghua.edu.cn/gitlab-ce/yum/el7/gitlab-ce-8.6.7-ce.0.el7.x86_64.rpm #获取安装包
+
+rpm -ivh gitlab-ce-8.6.7-ce.0.el7.x86_64.rpm  # 获取 rpm 包
+```
+
+###### 修改配置文件中的 ip 地址
+```bash
+vim /etc/gitlab/gitlab.rb #打开配置文件
+external_url 'http://101.132.168.000' #输入你的ip地址，这里我输入的是服务器的ip
+gitlab-ctl reconfigured
+```
+然后会出现一系列提示
+```
 Running handlers:
 Running handlers complete
 Chef Client finished, 220/307 resources updated in 01 minutes 26 seconds
 gitlab Reconfigured!
 ```
+重启 gitlab
+
 ```bash
-[root@openbiox01]# gitlab-ctl restart
+gitlab-ctl restart
+```
+会出现提示
+```
 ok: run: gitlab-workhorse: (pid 13653) 1s
 ok: run: logrotate: (pid 13661) 0s
 ok: run: nginx: (pid 13667) 1s
@@ -230,12 +258,22 @@ ok: run: sidekiq: (pid 13688) 0s
 ok: run: unicorn: (pid 13695) 0s
 
 ```
+###### 在浏览器中访问 GitLab
+打开浏览器输入网址：
 
+ https:// 刚刚在配置中填入的ip地址
+![](https://raw.githubusercontent.com/w1nsan/web-server-learning/master/img/gitlab%20web.JPG)
+修改密码后登陆
 
+###### 新增一个仓库
+![](https://raw.githubusercontent.com/w1nsan/web-server-learning/master/img/gitlab%2002.JPG)
+
+###### 添加密钥
+![](https://raw.githubusercontent.com/w1nsan/web-server-learning/master/img/gitlab%2003%20addkey.JPG)
 添加公钥之后克隆仓库
 ```bash
-[root@openbiox01]# git clone git@101.132.168.150:root/project102.git
-Cloning into 'project102'...
+git clone git@101.132.168.150:root/project101.git
+Cloning into 'project101'...
 remote: Counting objects: 6, done.
 remote: Compressing objects: 100% (3/3), done.
 remote: Total 6 (delta 0), reused 0 (delta 0)

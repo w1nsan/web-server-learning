@@ -59,7 +59,10 @@ DOM定义了HTML文档的**逻辑结构**，给出了一种访问和处理这两
 ...
 
 [参考手册](https://www.runoob.com/tags/html-reference.html)
+<<<<<<< HEAD
 
+=======
+>>>>>>> 889f532ef484a3b03d62a465a8ae03e653c3242a
 #### CSS 选择器有哪些？
 CSS选择器用于选择你想要的元素的样式的模式。HTML页面中的元素就是通过CSS选择器进行控制的。
 
@@ -93,7 +96,10 @@ javacript > pyhon > R
 
 （可以用斐波那契数列验证）
 #### Cookie 和 Session 存在的目的是什么？
+<<<<<<< HEAD
 
+=======
+>>>>>>> 889f532ef484a3b03d62a465a8ae03e653c3242a
 一般而言是为了让用户保持登录状态。
  客户端（用户）第一次访问一个服务器时，服务器会生成一个**Cookie**和**Session**。前者保存在客户端浏览器中，后者保存在服务器中，session比cookie更安全。下一次这个客户端再访问这个服务器时，服务端通过携带的Cookie找出该用户信息。服务端就能够知道是谁访问了。(p.s. `Session` 是对服务端来说的, 客户端没有 Session 这一说)。
  ![](https://ask.qcloudimg.com/http-save/developer-news/146u28ouxj.jpeg?imageView2/2/w/1620)
@@ -101,6 +107,7 @@ javacript > pyhon > R
  另外，对于 API 还有一个token的概念，详细可见：
 
  [Cookie，Session和Token概念的正确理解](https://cloud.tencent.com/developer/news/247610)
+<<<<<<< HEAD
 
 #### JavaScript 数据有哪些类型？它和 R/Python 的数据类型是否有什么对应关系？
 
@@ -108,10 +115,27 @@ javacript > pyhon > R
 
  - 基本数据类型：Null、Undefined、Number，String，Boolean。
  - 复杂数据类型：Object。
+=======
+#### JavaScript 数据有哪些类型？它和 R/Python 的数据类型是否有什么对应关系？
+
+JavaScript的数据类型分为两大类，基本数据类型和复杂数据类型。
+
+- 基本数据类型：Null、Undefined、Number，String，Boolean。
+- 复杂数据类型：Object。
+>>>>>>> 889f532ef484a3b03d62a465a8ae03e653c3242a
 
 #### 如何设置多个 git 远程仓库，并分别推送和拉取？
 #### GitHub 克隆仓库时选择 git:// 和 https://的差异
+https方式：通过填写账号和密码就可以clone代码库，但是缺点是每次fetch和push代码都需要输入账号和密码。
+
+git://方式 ：是通过 ssh 密钥方式，要添加公钥 (ssh key)。ssh 默认是每次 fetch 和 push 代码都不需要输入账号和密码。
+```bash
+ssh-keygen -t rsa   #制作密钥
+```
 #### 什么是持续集成？
+持续集成指的是，频繁地（一天多次）将代码集成到主干。
+
+参考资料： [什么是持续集成](http://www.ruanyifeng.com/blog/2015/09/continuous-integration.html)
 #### 什么是敏捷开发？
 #### GitHub 仓库可以关联哪些第三方网页服务进行发布前的自动测试？
 #### GitHub 的 Webhook 可以用来做什么？
@@ -119,7 +143,21 @@ javacript > pyhon > R
 #### MySQL 和 SQLite 分别适用于哪些网页应用程序？
 #### SQLite 数据库能否设置用户名和密码？
 #### 在 R/Python 中提供SQLite 和 MySQL 接口的包/模块分别是？
+#### HTML与HTML5的区别是？目前常用哪个？
+#### 什么是前端开发？什么是后端开发？两者有什么区别？
+前端--浏览器
 
+后端--服务器
+#### Rstudio Server算云服务器吗？是不是可以看作为一台只能可视化使用Rstudio的服务器？
+#### 类似于MySQL 关系型数据库管理系统有哪些？相比而言，MySQL 最主要的优点在哪？
+#### 浏览器，服务器和数据库之间的关系是什么，用户在浏览器中输入一个网址后这三者是怎样工作的?
+#### 云计算中的 laas,Paas,Saas 分别指的是什么，是通过什么来划分的。
+#### 列举几个 HTML 中常见的开放式标签
+#### 什么是 token 验证？
+
+---
+
+###  编程题
 #### 使用最基础的 HTML/CSS/JavaScript 语法，设计一个简单的单页网页界面（至少应该包含一二三级标题和正文、表格、内容分栏、超链接、图片、视频、点击动画等）
 #### 使用 JavaScript 编写一个可以生成斐波那锲数列的函数，输入为n，表示该数列所包含的数字个数
 
@@ -132,6 +170,7 @@ javacript > pyhon > R
 
 其实是一个**数列问题**，根据列出下表：
 ![](https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=3499102896,3228291657&fm=173&app=25&f=JPEG?w=640&h=135&s=8D2E7433C523693002D585CA000070B3)
+
 我们可以得到两个信息：
  1. 从3个月（n=3)开始，小兔子的数量跟前一个月(n=2)大兔子的数量是一致的。
  2. 从3个月（n=3)开始，大兔子的数量是前一个月(n=2)大兔子和小兔子的总和。
@@ -154,7 +193,7 @@ javacript > pyhon > R
 
 n=0,    f(n)=0
 
-n=1,  f(n)=1   
+n=1,  f(n)=1
 
 n>=1, f(n)=f(n-1)+f(n-2)
 
@@ -171,6 +210,7 @@ function Fibonacci(n) {
 参考：[什么是斐波那契数列](https://baijiahao.baidu.com/s?id=1606651492697783298&wfr=spider&for=pc)
 
 #### 比较相同功能的函数在JavaScript，R，和 Python 之间的差别（语法+速度）
+
 #### 尝试本地部署 Gitlab 服务
 Gitlab 是一个代码仓库管理系统，可以很方便的管理权限、代码review，创建、管理project。你可以用gitlab自己搭建一个类似于Github一样的系统，一般用于在企业、学校等内部网络搭建git私服。
 
@@ -179,3 +219,87 @@ Gitlab 是一个代码仓库管理系统，可以很方便的管理权限、代�
 [在本地服务器搭建gitlab仓库管理](https://www.cnblogs.com/nulige/p/6825625.html)
 
 [手把手教你 GitLab 的安装及使用](https://www.jianshu.com/p/b04356e014fa)
+<<<<<<< HEAD
+=======
+
+    Gitlab 相当于一个小型的 Github : GitLab可以实现一个**自托管**的Git项目仓库，可通过 Web 界面进行访问公开的或者私人项目。
+    它拥有与Github类似的功能可以管理团队对仓库的访问，它非常易于浏览提交过的版本并提供一个文件历史库。
+
+##### 在CentOS7服务器中搭建 GitLab
+###### 下载相关的包
+```bash
+yum install curl openssh-server openssh-clients postfix cronie policycoreutils-python –y    #安装 gitlab 依赖的包
+```
+###### 设置开机postfix的启动
+```bash
+systemctl start postfix
+
+systemctl enable postfix
+```
+###### 获取 gitlab 安装包
+###### 防火墙设置
+```bash
+yum install firewalld systemd -y
+service firewalld  start    #打开防火墙
+sudo firewall-cmd --permanent --add-service=http
+sudo systemctl reload firewalld   #设置并重启
+```
+###### 下载 GitLab
+```bash
+wget https://mirrors.tuna.tsinghua.edu.cn/gitlab-ce/yum/el7/gitlab-ce-8.6.7-ce.0.el7.x86_64.rpm #获取安装包
+
+rpm -ivh gitlab-ce-8.6.7-ce.0.el7.x86_64.rpm  # 获取 rpm 包
+```
+
+###### 修改配置文件中的 ip 地址
+```bash
+vim /etc/gitlab/gitlab.rb #打开配置文件
+external_url 'http://101.132.168.000' #输入你的ip地址，这里我输入的是服务器的ip
+gitlab-ctl reconfigured
+```
+然后会出现一系列提示
+```
+Running handlers:
+Running handlers complete
+Chef Client finished, 220/307 resources updated in 01 minutes 26 seconds
+gitlab Reconfigured!
+```
+重启 gitlab
+
+```bash
+gitlab-ctl restart
+```
+会出现提示
+```
+ok: run: gitlab-workhorse: (pid 13653) 1s
+ok: run: logrotate: (pid 13661) 0s
+ok: run: nginx: (pid 13667) 1s
+ok: run: postgresql: (pid 13675) 0s
+ok: run: redis: (pid 13683) 1s
+ok: run: sidekiq: (pid 13688) 0s
+ok: run: unicorn: (pid 13695) 0s
+
+```
+###### 在浏览器中访问 GitLab
+打开浏览器输入网址：
+
+ https:// 刚刚在配置中填入的ip地址
+![](https://raw.githubusercontent.com/w1nsan/web-server-learning/master/img/gitlab%20web.JPG)
+修改密码后登陆
+
+###### 新增一个仓库
+![](https://raw.githubusercontent.com/w1nsan/web-server-learning/master/img/gitlab%2002.JPG)
+
+###### 添加密钥
+![](https://raw.githubusercontent.com/w1nsan/web-server-learning/master/img/gitlab%2003%20addkey.JPG)
+添加公钥之后克隆仓库
+```bash
+git clone git@101.132.168.150:root/project101.git
+Cloning into 'project101'...
+remote: Counting objects: 6, done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 6 (delta 0), reused 0 (delta 0)
+Receiving objects: 100% (6/6), done.
+```
+#### 使用 MySQL 数据库创建一个用于存储用户信息的数据表：包含 username, email, password 三个字段，并分别使用 SQL 和 Python/R 客户端插入、删除和更新一行数据，密码使用 SHA256 进行加密
+>>>>>>> 889f532ef484a3b03d62a465a8ae03e653c3242a

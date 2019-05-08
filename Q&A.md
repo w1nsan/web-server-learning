@@ -59,10 +59,7 @@ DOM定义了HTML文档的**逻辑结构**，给出了一种访问和处理这两
 ...
 
 [参考手册](https://www.runoob.com/tags/html-reference.html)
-<<<<<<< HEAD
 
-=======
->>>>>>> 889f532ef484a3b03d62a465a8ae03e653c3242a
 #### CSS 选择器有哪些？
 CSS选择器用于选择你想要的元素的样式的模式。HTML页面中的元素就是通过CSS选择器进行控制的。
 
@@ -96,10 +93,6 @@ javacript > pyhon > R
 
 （可以用斐波那契数列验证）
 #### Cookie 和 Session 存在的目的是什么？
-<<<<<<< HEAD
-
-=======
->>>>>>> 889f532ef484a3b03d62a465a8ae03e653c3242a
 一般而言是为了让用户保持登录状态。
  客户端（用户）第一次访问一个服务器时，服务器会生成一个**Cookie**和**Session**。前者保存在客户端浏览器中，后者保存在服务器中，session比cookie更安全。下一次这个客户端再访问这个服务器时，服务端通过携带的Cookie找出该用户信息。服务端就能够知道是谁访问了。(p.s. `Session` 是对服务端来说的, 客户端没有 Session 这一说)。
  ![](https://ask.qcloudimg.com/http-save/developer-news/146u28ouxj.jpeg?imageView2/2/w/1620)
@@ -107,7 +100,6 @@ javacript > pyhon > R
  另外，对于 API 还有一个token的概念，详细可见：
 
  [Cookie，Session和Token概念的正确理解](https://cloud.tencent.com/developer/news/247610)
-<<<<<<< HEAD
 
 #### JavaScript 数据有哪些类型？它和 R/Python 的数据类型是否有什么对应关系？
 
@@ -115,14 +107,6 @@ javacript > pyhon > R
 
  - 基本数据类型：Null、Undefined、Number，String，Boolean。
  - 复杂数据类型：Object。
-=======
-#### JavaScript 数据有哪些类型？它和 R/Python 的数据类型是否有什么对应关系？
-
-JavaScript的数据类型分为两大类，基本数据类型和复杂数据类型。
-
-- 基本数据类型：Null、Undefined、Number，String，Boolean。
-- 复杂数据类型：Object。
->>>>>>> 889f532ef484a3b03d62a465a8ae03e653c3242a
 
 #### 如何设置多个 git 远程仓库，并分别推送和拉取？
 #### GitHub 克隆仓库时选择 git:// 和 https://的差异
@@ -219,8 +203,6 @@ Gitlab 是一个代码仓库管理系统，可以很方便的管理权限、代�
 [在本地服务器搭建gitlab仓库管理](https://www.cnblogs.com/nulige/p/6825625.html)
 
 [手把手教你 GitLab 的安装及使用](https://www.jianshu.com/p/b04356e014fa)
-<<<<<<< HEAD
-=======
 
     Gitlab 相当于一个小型的 Github : GitLab可以实现一个**自托管**的Git项目仓库，可通过 Web 界面进行访问公开的或者私人项目。
     它拥有与Github类似的功能可以管理团队对仓库的访问，它非常易于浏览提交过的版本并提供一个文件历史库。
@@ -302,4 +284,3 @@ remote: Total 6 (delta 0), reused 0 (delta 0)
 Receiving objects: 100% (6/6), done.
 ```
 #### 使用 MySQL 数据库创建一个用于存储用户信息的数据表：包含 username, email, password 三个字段，并分别使用 SQL 和 Python/R 客户端插入、删除和更新一行数据，密码使用 SHA256 进行加密
->>>>>>> 889f532ef484a3b03d62a465a8ae03e653c3242a

@@ -189,8 +189,150 @@ my_arr[5]; // 返回索引为5的元素，即true
 my_arr[6]; // 索引超出了范围，返回undefined
 ```
 
-[几个方法之间的区别](https://www.jianshu.com/p/75a45851b655)
+[几个创建数组方法之间的区别](https://www.jianshu.com/p/75a45851b655)
 #### 对象
 JavaScript的对象是一组由键-值组成的无序集合.
-比如说有一个对象(person)，设置6个键：name,age,sex,tags,city,hasCar;每个键里面包含了对应的值。 
+比如说有一个对象(person)，设置6个键（**=属性**）：name,age,sex,tags,city,hasCar;每个键（属性）里面包含了对应的值(任意数据类型)。
+
+`对象{属性：值；}`
+```js
+var person = {
+  name:"winsan", //属性名是字符串 name，属性的值是 “winsan”
+  age:20,
+  sex:"female",
+  tags:[geek,lab,crazy,kind],
+  city:"guangzhou",
+  hasCar:false
+}
+```
+如果想获取某个对象的某个属性值，需要用 `对象.属性名`的方式：
+```js
+person.name; //返回名字属性的值，比如说 “winsan”
+person.hasCar;//false
+```
+
 #### 变量
+
+##### 变量赋值
+在js中，用等号 `=`给变量赋值（**注意不要和判断符号的等号弄混了**）
+申明一个变量用`var`语句:
+```js
+var a; //申明变量 a，但a没有值，是 undefined
+var $b = 1; //申明变量 $b,同时赋值
+var s_010 ="010";//s_010的值是一个字符串 "s_010"
+var answer = true;//赋予布尔值
+var t =null; //t的值是空的 Null
+```
+尽量不要用中文作为变量名。
+##### 动态语言
+在`JavaScript`中，使用等号`=`对变量进行赋值。可以把任意数据类型赋值给变量，同一个变量可以反复赋值，而且可以是不同类型的变量，<span style="border-bottom:2px dashed green;">但是要注意只能用var申明一次</span>，例如：
+```js
+var a = 20; //申明一个变量a，并赋值20
+a = "abc";//对a重新赋值成一个字符串，但此时不需要再申明了
+```
+这种不需要事先给变量指定特定类型的就叫 **动态语言**
+##### 变量内容的查看
+要显示变量的内容，可以用
+```js
+console.log(x)
+```
+使用`console.log()`代替`alert()`的好处是可以避免弹出烦人的对话框。
+
+##### 为什么要申明变量
+如果一个变量没有通过`var`申明就被使用，那么该变量就自动被申明为**全局变量**。在同一个页面的不同的 JavaScript 文件中，如果都不用`var`申明，恰好都使用了变量`i`，将造成变量`i`互相影响，产生难以调试的错误结果。
+
+因此一般情况下我们要使用 `strict`功能，强制对每个变量事先申明，否则浏览器报错。
+
+```js
+'use strict'; //开启strict
+```
+这是一个字符串，不支持`strict模式`的浏览器会把它当做一个字符串语句执行，支持`strict模式`的浏览器将开启`strict模式`运行 JavaScript。
+
+### 数据类型——字符串
+
+#### 转义字符
+转义字符`\`可以转义很多字符，比如`\n`表示换行，`\t`表示制表符，字符`\`本身也要转义，所以`\\`表示的字符就是`\`。
+
+`ASCII字符`可以以`\x##`形式的十六进制表示，例如：
+```js
+'\x41'; // 完全等同于 'A'
+```
+
+还可以用`\u####`表示一个`Unicode字符`：
+```js
+'\u4e2d\u6587'; // 完全等同于 '中文'
+```
+#### 多行字符串
+
+用反引号\`...\`表示一个多行的字符串，可以替代重复使用`\n`
+```js
+`这是一个多行
+字符串
+啊哈哈哈
+你看这个字符串它又长又..唔唔唔（捂嘴警告)`;
+\\ 可以在浏览器中用 console.log(多行字符串)来检验该浏览器是否支持ES6这一语法
+```
+#### 将多个变量串联起来
+用`+`号：
+```js
+var name = '小明';
+var age = 20;
+var message = '你好, ' + name + ', 你今年' + age + '岁了!';
+\\ 这里的 “你好”，name变量，“你今年”，age变量，“岁了！”当作不同的字符串通过 +连到一起
+alert(message);
+```
+ES6新增了一种模板字符串，表示方法和上面的多行字符串一样，但是它会**自动替换字符串中的变量**：
+```js
+var name = '小明';
+var age = 20;
+var message = `你好, ${name}, 你今年${age}岁了!`;
+\\ 这里的文字字符串不需要单独引号出来
+alert(message);
+```
+
+#### 对字符串的操作
+
+ - 计算长度 `var.length;`
+
+```js
+ var s = 'Hello, world!';
+ s.length; // 13
+```
+ - 获取字符串中指定位置内容 `var[位置]`
+
+```js
+ var s = 'Hello, world!';
+s[0]; // 'H'
+s[6]; // ' '
+s[7]; // 'w'
+s[12]; // '!'
+s[13]; // undefined 超出范围的索引不会报错，但一律返回undefined
+```
+JavaScript为字符串提供了一些常用方法，注意，调用这些方法本身不会改变原有字符串的内容，而是返回一个**新字符串**：
+ - 返回大写 `toUpperCase()`
+
+```js
+var s = 'Hello';
+s.toUpperCase(); // 返回'HELLO'
+```
+ - 返回小写 `toLowerCase()`
+
+```js
+var s = 'Hello';
+var lower = s.toLowerCase(); // 返回'hello'并赋值给变量lower
+lower; // 'hello'
+```
+ - 指定字符串出现的位置 `indexOf()`
+
+```js
+var s = 'hello, world';
+s.indexOf('world'); // 返回7，这是第7个字符开始的字符
+s.indexOf('World'); // 没有找到指定的子串，返回-1
+```
+ - 返回指定索引区间的子串  `substring()`
+
+```js
+var s = 'hello, world'
+s.substring(0, 5); // 从索引0开始到5（不包括5），返回'hello'
+s.substring(7); // 从索引7开始到结束，返回'world'
+```

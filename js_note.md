@@ -336,3 +336,121 @@ var s = 'hello, world'
 s.substring(0, 5); // 从索引0开始到5（不包括5），返回'hello'
 s.substring(7); // 从索引7开始到结束，返回'world'
 ```
+
+---
+
+### 数据类型——数组
+
+#### 对数组的操作
+赋值非常自由，可以接改变某个元素的值，也可以直接改变数组的长度。
+
+##### slice
+
+`slice()`就是对应`String`的`substring()`版本，它截取 Array 的部分元素，然后返回一个新的 Array：
+```js
+var arr = ['A', 'B', 'C', 'D', 'E', 'F', 'G'];
+arr.slice(0, 3); // 从索引0开始，到索引3结束，但不包括索引3: ['A', 'B', 'C']
+arr.slice(3); // 从索引3开始到结束: ['D', 'E', 'F', 'G']
+```
+注意到 `slice()`的起止参数包括**开始索引，不包括结束索引。**
+
+如果不给`slice()`传递任何参数，它就会从头到尾截取所有元素。利用这一点，我们可以很容易地复制一个Array：
+```js
+var arr = ['A', 'B', 'C', 'D', 'E', 'F', 'G'];
+var aCopy = arr.slice();
+aCopy; // ['A', 'B', 'C', 'D', 'E', 'F', 'G']
+aCopy === arr; // false
+```
+##### push和pop
+
+`push()`向Array的末尾**添加**若干元素
+
+`pop()`则把Array的最后一个元素**删除**掉：
+```js
+var arr = [1, 2];
+arr.push('A', 'B'); // 返回Array新的长度: 4
+arr; // [1, 2, 'A', 'B']
+arr.pop(); // pop()返回'B'
+arr; // [1, 2, 'A']
+arr.pop(); // 空数组继续pop不会报错，而是返回undefined
+arr; // []
+```
+##### unshift和shift
+
+如果要往Array的**头部**添加若干元素，使用`unshift()方法`;
+
+`shift()`方法则把Array的第一个元素删掉：
+```js
+var arr = [1, 2];
+arr.unshift('A', 'B'); // 返回Array新的长度: 4
+arr; // ['A', 'B', 1, 2]
+arr.shift(); // 'A'
+arr; // ['B', 1, 2]
+arr.shift(); arr.shift(); arr.shift(); // 连续shift 3次
+arr; // []
+arr.shift(); // 空数组继续shift不会报错，而是返回undefined
+arr; // []
+```
+##### sort
+
+`sort()`可以对当前Array进行排序，它会直接修改当前Array的元素位置，直接调用时，按照默认顺序排序：
+```js
+var arr = ['B', 'C', 'A'];
+arr.sort();
+arr; // ['A', 'B', 'C']
+```
+
+##### splice
+
+`splice()`方法是修改Array的“万能方法”，它可以从指定的索引开始删除若干元素，然后再从该位置添加若干元素：
+
+`arr.splice(删除/添加开始的位置，删除数量，添加元素)`
+```js
+var arr = ['Microsoft', 'Apple', 'Yahoo', 'AOL', 'Excite', 'Oracle'];
+// 从索引2开始删除3个元素,然后再添加两个元素:
+arr.splice(2, 3, 'Google', 'Facebook'); // 返回删除的元素 ['Yahoo', 'AOL', 'Excite']
+arr; // ['Microsoft', 'Apple', 'Google', 'Facebook', 'Oracle']
+
+// 只删除,不添加:
+arr.splice(2, 2); // ['Google', 'Facebook']
+arr; // ['Microsoft', 'Apple', 'Oracle']
+
+// 只添加,不删除:
+arr.splice(2, 0, 'Google', 'Facebook'); // 返回[],因为没有删除任何元素
+arr; // ['Microsoft', 'Apple', 'Google', 'Facebook', 'Oracle']
+```
+##### concat
+
+`concat()`方法把当前的Array和另一个Array **连接**起来，并返回一个新的Array：
+```js
+var arr = ['A', 'B', 'C'];
+var added = arr.concat([1, 2, 3]);
+added; // ['A', 'B', 'C', 1, 2, 3]
+arr; // ['A', 'B', 'C']
+```
+
+concat()方法可以接收任意个元素和Array，并且自动把Array拆开，然后全部添加到新的Array里：
+```js
+var arr = ['A', 'B', 'C'];
+arr.concat(1, 2, [3, 4]); // ['A', 'B', 'C', 1, 2, 3, 4]
+```
+
+##### join
+
+`join()` 方法是一个非常实用的方法，它把当前Array的每个元素都用指定的字符串连接起来，然后返回连接后的字符串：
+```js
+var arr = ['A', 'B', 'C', 1, 2, 3];
+arr.join('-'); // 'A-B-C-1-2-3'
+```
+如果Array的元素不是字符串，将自动转换为字符串后再连接。
+
+---
+### 数据类型——对象
+```
+对象名{
+属性名：属性值，
+属性名2：属性值，属性
+名3：属性值
+}
+```
+对象的`属性`是通过 `.` 来调用的。

@@ -18,6 +18,11 @@ OpenStack、Open vSwitch、Docker、Kubernetes
 
 看过一个很有趣的比喻，假如整个网站是一个人的身体/那么HTML 是人的躯壳，CSS是人的五官和皮肤，JavaScript则是驱动整个人体活动的神经系统。
 #### 简述 HTML、XHTML 和 XML的异同
+`HTML`超文本标记语言是标准通用标记语言下的一个应用，也是一种规范，一种标准。
+
+`XML`(Extensible Markup Language)，可扩展标记语言。XML是标准通用标记语言的子集，是一种用于标记电子文件使其具有结构性的标记语言，它被设计用来传输和存储数据，是对超文本标记语言的补充。
+`
+`XHTML`(Extensible HyperText Markup Language)，可扩展超文本标记语言。XHTML基于可扩展标记语言（XML）。XHTML就是一个扮演着类似HTML的角色的可扩展标记语言（XML），所以，本质上说，XHTML是一个过渡技术，结合了部分XML的强大功能及大多数HTML的简单特性,编码更加严谨。
 #### 什么是 DOM?
 DOM是文档对象模型(Document Object Model)的缩写，它是 HTML 文档的对象表示，同时也是 HTML 元素面向外部(如Javascript)的接口。
 
@@ -109,6 +114,25 @@ javacript > pyhon > R
  - 复杂数据类型：Object。
 
 #### 如何设置多个 git 远程仓库，并分别推送和拉取？
+
+使用命令 `git remote add <name> <url>`
+
+`name` 表示你要给这个远程库起的名字
+`url` 表示这个库的地址
+
+提交：` git push <name> <branch> `
+
+```shell
+#添加第一个仓库
+git remote add repo1 <仓库地址>
+#添加第二个仓库
+git remote add repo2 <仓库地址>
+#提交到repo2
+git push repo2 master(分支名)
+#从repo2更新
+git pull repo2 master
+```
+
 #### GitHub 克隆仓库时选择 git:// 和 https://的差异
 https方式：通过填写账号和密码就可以clone代码库，但是缺点是每次fetch和push代码都需要输入账号和密码。
 
@@ -124,14 +148,33 @@ ssh-keygen -t rsa   #制作密钥
 #### GitHub 仓库可以关联哪些第三方网页服务进行发布前的自动测试？
 #### GitHub 的 Webhook 可以用来做什么？
 #### MySQL 的开源版本叫什么？它和甲骨文公司维护的版本有什么区别？
+**`MySQL Community Server`** 是开源免费的，这也是我们通常用的 MySQL 的版本;
+
+MySQL 和Oracle 都是流行的关系数据库管理系统。后者是收费的。Oracle的SQL语法与MySQL有很大不同。Oracle为称为PL / SQL的编程语言提供了更大的灵活性。与Oracle相比，MySQL没有表空间，角色管理，快照，同义词和包以及自动存储管理。
+
+还有其余更多区别：[mysql和oracle的区别有哪些](https://baijiahao.baidu.com/s?id=1626781011360393366&wfr=spider&for=pc)
+
 #### MySQL 和 SQLite 分别适用于哪些网页应用程序？
+SQLITE功能简约，小型化，追求最大磁盘效率；（一般用于客户端开发）
+
+MYSQL功能全面，综合化，追求最大并发效率。
+
+如果只是单机上用的，数据量不是很大，需要方便移植或者需要频繁读/写磁盘文件的话，就用SQLite比较合适；如果是要满足多用户同时访问，或者是网站访问量比较大是使用MYSQL比较合适。
 #### SQLite 数据库能否设置用户名和密码？
 #### 在 R/Python 中提供SQLite 和 MySQL 接口的包/模块分别是？
 #### HTML与HTML5的区别是？目前常用哪个？
-#### 什么是前端开发？什么是后端开发？两者有什么区别？
-前端--浏览器
+与传统HTML相比，HTML5新增了很多元素特性，并且简化了一些语法。
 
-后端--服务器
+目前由于HTML5的标准还未完全定型，加之部分浏览器还不支持html5的新特性，考虑到兼容性问题，html还是最常用的。
+#### 什么是前端开发？什么是后端开发？两者有什么区别？
+负责对服务器运算写脚本的称为后端开；负责对更贴近用户的浏览器或客户端运算编程的称为前端开发；
+
+服务器脚本(后端)：
+`PHP、ASP.NET`
+
+浏览器脚本(前端)：
+`HTML、CSS、JavaScript`
+
 #### Rstudio Server算云服务器吗？是不是可以看作为一台只能可视化使用Rstudio的服务器？
 #### 类似于MySQL 关系型数据库管理系统有哪些？相比而言，MySQL 最主要的优点在哪？
 #### 浏览器，服务器和数据库之间的关系是什么，用户在浏览器中输入一个网址后这三者是怎样工作的?

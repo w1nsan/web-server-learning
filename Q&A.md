@@ -9,7 +9,7 @@ OpenStack、Open vSwitch、Docker、Kubernetes
 & [浅谈云服务器安全组功能以及使用](https://www.cnblogs.com/xu-yi/p/10447013.html)
 
 #### 为什么阿里云在国内的市场占有率要远远超过其他的几家厂商？
-最早，最稳定，最成熟，投入最大
+最早（云梯计划），最稳定，最成熟，投入最大
 #### HTML 是一种编程语言吗？
 `HTML`全称是超文本标记语言(Hyper Text Markup Language)，因此它跟`Python`, `C++`, `JAVA`等不一样，不是传统意义上的编程语言，而是一种标记语言(markup language)。由浏览器负责对`html`进行编译和渲染。
 
@@ -65,6 +65,12 @@ DOM定义了HTML文档的**逻辑结构**，给出了一种访问和处理这两
 
 [参考手册](https://www.runoob.com/tags/html-reference.html)
 
+#### 列举几个 HTML 中常见的开放式标签
+
+`<img>`
+`<input>`
+`<meta>`
+
 #### CSS 选择器有哪些？
 CSS选择器用于选择你想要的元素的样式的模式。HTML页面中的元素就是通过CSS选择器进行控制的。
 
@@ -102,7 +108,11 @@ javacript > pyhon > R
  客户端（用户）第一次访问一个服务器时，服务器会生成一个**Cookie**和**Session**。前者保存在客户端浏览器中，后者保存在服务器中，session比cookie更安全。下一次这个客户端再访问这个服务器时，服务端通过携带的Cookie找出该用户信息。服务端就能够知道是谁访问了。(p.s. `Session` 是对服务端来说的, 客户端没有 Session 这一说)。
  ![](https://ask.qcloudimg.com/http-save/developer-news/146u28ouxj.jpeg?imageView2/2/w/1620)
 
- 另外，对于 API 还有一个token的概念，详细可见：
+ #### 什么是 token 验证？
+
+  在非Web的情况下, 没有Cookie的时候,一般用`token`解决用户身份认证问题。
+
+  `Token` 通常叫**令牌**, 最简单的Token组成 `uid`(用户唯一身份标识),`time`(时间戳),`sign`(签名),还可以把不变的参数也放进token,避免多次查库。
 
  [Cookie，Session和Token概念的正确理解](https://cloud.tencent.com/developer/news/247610)
 
@@ -145,8 +155,8 @@ ssh-keygen -t rsa   #制作密钥
 
 参考资料： [什么是持续集成](http://www.ruanyifeng.com/blog/2015/09/continuous-integration.html)
 #### 什么是敏捷开发？
-#### GitHub 仓库可以关联哪些第三方网页服务进行发布前的自动测试？
-#### GitHub 的 Webhook 可以用来做什么？
+#### (unfinished)GitHub 仓库可以关联哪些第三方网页服务进行发布前的自动测试？
+#### (unfinished)GitHub 的 Webhook 可以用来做什么？
 #### MySQL 的开源版本叫什么？它和甲骨文公司维护的版本有什么区别？
 **`MySQL Community Server`** 是开源免费的，这也是我们通常用的 MySQL 的版本;
 
@@ -160,8 +170,8 @@ SQLITE功能简约，小型化，追求最大磁盘效率；（一般用于客�
 MYSQL功能全面，综合化，追求最大并发效率。
 
 如果只是单机上用的，数据量不是很大，需要方便移植或者需要频繁读/写磁盘文件的话，就用SQLite比较合适；如果是要满足多用户同时访问，或者是网站访问量比较大是使用MYSQL比较合适。
-#### SQLite 数据库能否设置用户名和密码？
-#### 在 R/Python 中提供SQLite 和 MySQL 接口的包/模块分别是？
+#### (unfinished)SQLite 数据库能否设置用户名和密码？
+#### (unfinished)在 R/Python 中提供SQLite 和 MySQL 接口的包/模块分别是？
 #### HTML与HTML5的区别是？目前常用哪个？
 与传统HTML相比，HTML5新增了很多元素特性，并且简化了一些语法。
 
@@ -177,16 +187,60 @@ MYSQL功能全面，综合化，追求最大并发效率。
 
 #### Rstudio Server算云服务器吗？是不是可以看作为一台只能可视化使用Rstudio的服务器？
 `RStudio Server`是一个基于 web 访问的`RStudio云端开发环境`，需要安装在服务器上，支持多用户远程访问使用。简单来说，`RStudio Server` 是一个 Linux 服务器上的**应用程序**，提供了在服务器上运行的 R 环境，而用户通过浏览器来访问。
-#### 类似于MySQL 关系型数据库管理系统有哪些？相比而言，MySQL 最主要的优点在哪？
+#### (unfinished)类似于MySQL 关系型数据库管理系统有哪些？相比而言，MySQL 最主要的优点在哪？
 #### 浏览器，服务器和数据库之间的关系是什么，用户在浏览器中输入一个网址后这三者是怎样工作的?
+当用户在浏览器中输入一个网址，也就是通过http协议向服务器发出请求。服务器会对相应请求作出响应，从数据库中调取数据，再将html内容返回给浏览器，这时浏览器就会解析html，将结果呈现给用户。
+
 #### 云计算中的 laas,Paas,Saas 分别指的是什么，是通过什么来划分的。
-#### 列举几个 HTML 中常见的开放式标签
-#### 什么是 token 验证？
+IaaS, PaaS和SaaS是云计算的三种服务模式。
+
+`SaaS`：`Software-as-a-Service`（软件即服务）提供给客户的服务是运营商运行在云计算基础设施上的应用程序，用户可以在各种设备上通过客户端界面访问，如浏览器。
+
+`PaaS`：`Platform-as-a-Service`（平台即服务）提供给消费者的服务是把客户采用提供的开发语言和工具（例如Java，python, .Net等）开发的或收购的应用程序部署到供应商的云计算基础设施上去。
+
+`IaaS`： `Infrastructure-as-a-Service`（基础设施即服务）提供给消费者的服务是对所有计算基础设施的利用，包括处理CPU、内存、存储、网络和其它基本的计算资源，用户能够部署和运行任意软件，包括操作系统和应用程序。
 
 ---
 
 ###  编程题
-#### 使用最基础的 HTML/CSS/JavaScript 语法，设计一个简单的单页网页界面（至少应该包含一二三级标题和正文、表格、内容分栏、超链接、图片、视频、点击动画等）
+#### (unfinished)使用最基础的 HTML/CSS/JavaScript 语法，设计一个简单的单页网页界面（至少应该包含一二三级标题和正文、表格、内容分栏、超链接、图片、视频、点击动画等）
+
+暂时列出所用到的相关标签
+
+```HTML
+<!doctype html>
+<html>
+<head>
+  <meta>
+  <meta>
+  <title></title>
+</head>
+<body>
+  <h1></h1>
+  <h2></h2>
+  <h3></h3>
+<!--段落-->
+  <div>
+    <p><a href="www.baidu.com">网速测试</a></p>
+    <img src="/test.jpg" alt="just for test">
+  </div>
+<!--表格-->
+  <div>
+    <table>
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+  </div>
+</body>
+</html>
+
+```
 #### 使用 JavaScript 编写一个可以生成斐波那锲数列的函数，输入为n，表示该数列所包含的数字个数
 
     斐波那契数列(Fibonacci)也叫兔子数列。
@@ -237,7 +291,9 @@ function Fibonacci(n) {
 ```
 参考：[什么是斐波那契数列](https://baijiahao.baidu.com/s?id=1606651492697783298&wfr=spider&for=pc)
 
-#### 比较相同功能的函数在JavaScript，R，和 Python 之间的差别（语法+速度）
+#### (unfinished)比较相同功能的函数在JavaScript，R，和 Python 之间的差别（语法+速度）
+
+   可以用斐波那契数列来验证
 
 #### 尝试本地部署 Gitlab 服务
 Gitlab 是一个代码仓库管理系统，可以很方便的管理权限、代码review，创建、管理project。你可以用gitlab自己搭建一个类似于Github一样的系统，一般用于在企业、学校等内部网络搭建git私服。
@@ -327,4 +383,4 @@ remote: Compressing objects: 100% (3/3), done.
 remote: Total 6 (delta 0), reused 0 (delta 0)
 Receiving objects: 100% (6/6), done.
 ```
-#### 使用 MySQL 数据库创建一个用于存储用户信息的数据表：包含 username, email, password 三个字段，并分别使用 SQL 和 Python/R 客户端插入、删除和更新一行数据，密码使用 SHA256 进行加密
+#### (unfinished)使用 MySQL 数据库创建一个用于存储用户信息的数据表：包含 username, email, password 三个字段，并分别使用 SQL 和 Python/R 客户端插入、删除和更新一行数据，密码使用 SHA256 进行加密
